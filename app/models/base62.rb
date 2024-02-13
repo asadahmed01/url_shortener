@@ -3,6 +3,7 @@ class Base62
   BASE = ALPHABET.length
 
   def self.encode(number)
+    return ALPHABET.first if number.zero? || number.nil?
     result = ""
 
     while number > 0 do
