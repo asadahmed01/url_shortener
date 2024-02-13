@@ -6,7 +6,7 @@ class Base62Test < ActiveSupport::TestCase
   end
 
   test "encode 1" do
-    assert_equal " 1", Base62.encode(1)
+    assert_equal "1", Base62.encode(1)
   end
 
   test "encode 10" do
