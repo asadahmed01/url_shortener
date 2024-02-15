@@ -1,0 +1,8 @@
+<h3 class="mb-6">Edit a URL </h3>
+
+<%= render partial: "form", locals: {link: @link} %>
+
+<div class="flex justify-between mt-14">
+    <%= link_to "Cancel", @link, class: "bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded no-underline" %>
+    <%= button_to "Delete", @link, class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded", method: :delete, data: { turbo_confirm: 'Are you sure?' } %>
+</div>
