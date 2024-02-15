@@ -1,1 +1,9 @@
-<h1><%= @link.url %> </h1>
+<h1 class="mb-8">
+    <%= link_to view_path(@link.to_param), class: "no-underline hover:underline", target: :_blank, data: {turbo: false} do %>
+        <div><%= @link.url %></div>
+    <% end %>
+</h1>
+
+<div class="mt-10">
+    <%= line_chart @link.views.group_by_day(:created_at, range: 1.month.ago..Time.now, expand_range: true).count %>
+</div>
