@@ -1,3 +1,6 @@
+<div class="mb-10">
+    <%= link_to "← Back to all links", root_path, class: "no-underline hover:underline" %>
+</div>
 <h1 class="mb-8">
     <%= link_to view_path(@link.to_param), class: "no-underline hover:underline", target: :_blank, data: {turbo: false} do %>
         <div><%= @link.url %></div>

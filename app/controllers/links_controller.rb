@@ -1,6 +1,9 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to root_path, alert: "link not found."
+  end
   def index
     @links = Link.recent_first
     @link ||= Link.new
@@ -24,14 +27,15 @@ class LinksController < ApplicationController
 
   def update
     if @link.update(link_params)
-      redirect_to @link
+      redirect_to @link, notice: "link has been successfully updated!"
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-
+    @link.destroy
+    redirect_to root_path, notice: "link has been removed."
   end
 
 
