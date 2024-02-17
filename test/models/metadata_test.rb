@@ -18,7 +18,7 @@ class MetadataTest < ActiveSupport::TestCase
   end
 
   test "image attribute" do
-    assert_equal "Hello", Metadata.new("<meta name='og:image' content='Hello'").image
+    assert_equal "image.png", Metadata.new("<meta name='og:image' content='image.png'").image
   end
 
   test "missing meta image" do
