@@ -22,7 +22,7 @@
             <% end%>
         </div>
         <div>
-            <%= link_to "Copy", link, class: "ms-4 p-1 no-underline bg-gray-100 rounded" %>
+            <%= button_tag "Copy", class: "ms-4 p-1 no-underline bg-gray-100 rounded", data: {controller: "clipboard", clipboard_text: view_url(link)} %>
         </div>
         
     </div>
