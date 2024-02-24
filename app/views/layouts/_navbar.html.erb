@@ -4,5 +4,14 @@
     <span class="font-semibold text-xl tracking-tight">teeny-tiny URL</span>
   </div>
   
-  <div class="font-semibold text-xl tracking-tight text-white">Profile</div>
+  <div class="">
+    <% if Current.user.present? %>
+      <%= button_to(
+        "Log Out",
+        login_path,
+        method: :delete,
+        class: "text-xl tracking-tight text-white hover:bg-indigo-900 text-blue-700 p-1 rounded"
+      ) %>
+    <% end%>
+  </div>
 </nav>

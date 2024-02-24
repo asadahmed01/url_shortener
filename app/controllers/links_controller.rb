@@ -5,6 +5,7 @@ class LinksController < ApplicationController
     redirect_to root_path, alert: "link not found."
   end
   def index
+    authenticate_user
     @links = Link.recent_first
     @link ||= Link.new
   end
