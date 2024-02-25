@@ -1,5 +1,6 @@
 class Link < ApplicationRecord
 
+  belongs_to :user
   has_many :views, dependent: :destroy
   validates :url, presence: true
 
