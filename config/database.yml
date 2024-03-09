@@ -21,7 +21,9 @@ default: &default
 
 development:
   <<: *default
-  database: url_shortener_development
+  database: postgres
+  username: postgres
+  password: 1466
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -55,7 +57,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: url_shortener_test
+  database: postgres
+  username: postgres
+  password: 1466
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
