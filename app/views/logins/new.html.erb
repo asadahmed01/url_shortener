@@ -1,0 +1,13 @@
+<div class="w-100">
+  <div>
+    <h1>Login With a Magic Link</h1>
+    <h3 class="text-gray-500">Receive a one-time login link</h3>
+  </div>
+  <%= form_with url: login_path do |f| %>
+    <label for="email" class="sr-only">Email address</label>
+    <div class="flex justify-conent-between rounded-lg shadow-sm">
+    <%= f.email_field :email, placeholder: "example@example.com", class: "bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500", id: "email", required: true %>
+    <%= f.submit "Send Login Link", class: "bg-blue-500 hover:bg-blue-700 text-white px-5 rounded" %>
+    </div>
+  <% end %>
+</div>

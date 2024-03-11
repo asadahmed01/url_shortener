@@ -32,7 +32,7 @@ class LinksController < ApplicationController
         render :index, status: :unprocessable_entity
       end
     else
-      redirect_to login_path, alert: "You need to log in to create a link. It is super easy."
+      redirect_to new_login_path, alert: "You need to log in to create a link. It is super easy."
     end
   end
 

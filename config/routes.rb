@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
    resources :links
    resources :views, path: :v, only: [:show]
-   resource :login, only: [:index, :show, :destroy]
+   resource :login, only: [:index, :new, :show, :create, :destroy]
 
   # Defines the root path route ("/")
   root "links#index"
