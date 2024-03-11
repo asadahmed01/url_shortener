@@ -23,7 +23,7 @@ module UrlShortener
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
+    config.action_mailer.default_url_options = { host: 'https://10xgx.hatchboxapp.com/' }
 
   end
 end
