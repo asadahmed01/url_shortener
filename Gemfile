@@ -75,3 +75,4 @@ gem "groupdate", "~> 6.4"
 gem "sucker_punch", "~> 3.2"
 
 gem "postmark-rails"
+gem "solid_queue"
