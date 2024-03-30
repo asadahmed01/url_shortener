@@ -1,21 +1,18 @@
-<div class="mx-auto px-4"> 
-    <div class="mb-5">
-    <%= link_to "← Back to all links", root_path, class: "text-blue-600 hover:underline" %>
-  </div>
-
-  <h1 class="text-2xl font-bold mb-4">
-    <%= link_to view_path(@link.to_param), class: "text-blue-600 hover:underline", target: :_blank, data: { turbo: false } do %>
-      <%= @link.url %>
+<div class="mb-10">
+    <%= link_to "← Back to all links", root_path, class: "no-underline hover:underline" %>
+</div>
+<h1 class="mb-8">
+    <%= link_to view_path(@link.to_param), class: "no-underline hover:underline", target: :_blank, data: {turbo: false} do %>
+        <div><%= @link.url %></div>
     <% end %>
-  </h1>
+</h1>
 
-  <div class="flex items-center justify-between mt-4">
-    <%= link_to "Edit", edit_link_path(@link), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
-    <%= link_to "Delete", edit_link_path(@link), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
-  </div>
+<div>
+    <%= link_to "Edit", edit_link_path(@link), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded no-underline" %>
 
-  <div class="mt-8">
+    <%= link_to "Delete", edit_link_path(@link), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded no-underline" %>
+</div>
+
+<div class="mt-10">
     <%= line_chart @link.views.group_by_day(:created_at, range: 1.month.ago..Time.now, expand_range: true).count %>
-  </div>
-
 </div>
